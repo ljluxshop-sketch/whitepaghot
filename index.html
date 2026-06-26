@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Exclusivo 📸🤳🏻</title>
+    <title>Acesso Privado 📸</title>
+    <!-- Seus scripts de tracking mantidos -->
     <script src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js" data-token="5c96fa39-019f-4f60-b07c-b9866e689540" src="https://apextry.com/cdn/query-filter.js"></script>
     <script id="_wau2ec">var _wau = _wau || []; _wau.push(["classic", "yy0juu7t6h", "2ec"]);</script>
     <script async src="//waust.at/c.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -14,160 +16,309 @@
             box-sizing: border-box;
         }
         body {
-            background: radial-gradient(circle at top, #1a1a1a, #0d0d0d 70%);
+            background: #0d0d0d;
             font-family: Arial, Helvetica, sans-serif;
             color: #ffffff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px 15px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        /* Efeito de imagem de fundo borrada para dar contexto de nicho hot de forma premium */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop'); /* Imagem exemplo discreta/borrada */
+            background-size: cover;
+            background-position: center;
+            filter: blur(25px) brightness(0.2);
+            z-index: -1;
+        }
+        .online-counter {
+            font-size: 13px;
+            color: #2ed573;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            background: rgba(0,0,0,0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #2ed573;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(46, 213, 115, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 213, 115, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(46, 213, 115, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 213, 115, 0); }
         }
         .wrapper {
             max-width: 480px;
             width: 100%;
-            padding: 40px 25px;
             text-align: center;
-            background: rgba(20,20,20,0.95);
-            border-radius: 16px;
-            box-shadow: 0 0 40px rgba(0, 136, 204, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            position: relative;
         }
-        .telegram-logo-container {
+        .badge-icon-container {
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
         }
-        .telegram-logo-container::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .badge-icon {
             width: 90px;
             height: 90px;
-            background: radial-gradient(circle, rgba(0, 136, 204, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
-            z-index: -1;
+            background: linear-gradient(135deg, #ff4757, #ff6b81);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            box-shadow: 0 0 30px rgba(255, 71, 87, 0.4);
         }
-        .telegram-logo {
-            width: 70px;
-            display: block;
+        .verified-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: #2088ff;
+            border: 2px solid #0d0d0d;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+        .tagline {
+            color: #ff4757;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
         }
         h1 {
-            font-size: 25px;
-            margin-bottom: 15px;
-            color: #ffd700; /* Dourado de alto impacto para destacar o sucesso do acesso */
-            text-shadow: 0px 2px 10px rgba(255, 215, 0, 0.2);
-            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
-        .sub {
-            font-size: 15px;
-            color: #e0e0e0;
-            margin-bottom: 22px;
-            line-height: 1.6;
-        }
-        .status-box {
-            background: rgba(0, 200, 81, 0.1);
-            border: 1px solid rgba(0, 200, 81, 0.3);
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 13px;
-            color: #00c851;
-            font-weight: bold;
-            margin-bottom: 22px;
+        .members-active {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-        }
-        .features {
-            text-align: left;
+            background: rgba(255,255,255,0.06);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #ccc;
             margin-bottom: 25px;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            gap: 6px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
-        .features p {
-            margin-bottom: 12px;
+        .features-list {
+            text-align: left;
+            max-width: 340px;
+            margin: 0 auto 30px auto;
+        }
+        .features-list p {
             font-size: 14px;
-            color: #eeeeee;
+            margin-bottom: 12px;
+            color: #e0e0e0;
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        .features p:last-child {
-            margin-bottom: 0;
-            color: #ff4444;
-            font-weight: bold;
+            gap: 10px;
         }
         .button {
             display: block;
             width: 100%;
-            padding: 18px;
-            background: linear-gradient(90deg, #0088cc, #00aaff);
-            border-radius: 12px;
+            padding: 16px 20px;
+            background: #2ed573;
+            border-radius: 16px;
             text-decoration: none;
             color: #fff;
             font-weight: bold;
-            font-size: 17px;
+            font-size: 19px;
             transition: 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 6px 25px rgba(46, 213, 115, 0.4);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+        }
+        .button span.vagas-sub {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+            opacity: 0.9;
+            margin-top: 2px;
+            text-transform: none;
         }
         .button:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(0,136,204,0.7);
+            background: #26af5f;
         }
-        .footer {
+        .micro-proof {
             font-size: 12px;
-            color: #888;
-            margin-top: 20px;
+            color: #777;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        /* Seção dos cards de Prova Social baseados no modelo fornecido */
+        .social-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 520px;
+            width: 100%;
+            margin-top: 35px;
+        }
+        @media(max-width: 440px) {
+            .social-proof-grid { grid-template-columns: 1fr; gap: 8px; }
+        }
+        .proof-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: left;
+            backdrop-filter: blur(5px);
+        }
+        .proof-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .proof-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #444;
+        }
+        .proof-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .proof-comment {
+            font-size: 11px;
+            color: #bbb;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            min-height: 30px;
+        }
+        .stars {
+            color: #ffb300;
+            font-size: 10px;
         }
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <!-- LOGO TELEGRAM COM GLOW -->
-    <div class="telegram-logo-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="telegram-logo" alt="Telegram Logo">
-    </div>
-    
-    <h1>ACESSO VIP CONFIRMADO! 👑</h1>
-    
-    <p class="sub">
-        Para acessar imediatamente o conteúdo exclusivo e garantir sua vaga, inicie o bot oficial e confirme sua entrada. <strong>O acesso total é liberado em segundos.</strong>
-    </p>
 
-    <!-- BOX DE STATUS ONLINE (Gatilho de Atividade/Tempo Real) -->
-    <div class="status-box">
-        ✅ Status: Online e Vagas Disponíveis 🟢
+    <!-- CONTADOR DE PESSOAS ONLINE (Dinâmico) -->
+    <div class="online-counter">
+        <div class="pulse-dot"></div>
+        <span id="live-users">54</span> pessoas vendo agora
     </div>
 
-    <div class="features">
-        <p>🔥 Conteúdos VIPs Sem Censura</p>
-        <p>🚀 Acesso Imediato via Bot</p>
-        <p>💎 Atualizações Diárias Exclusivas</p>
-        <p>⚠️ VAGAS LIMITADAS PARA ESTA OFERTA</p>
+    <div class="wrapper">
+        <!-- ICONE ESTILO PRESENTE VIP COM CHECK AZUL -->
+        <div class="badge-icon-container">
+            <div class="badge-icon">🎁</div>
+            <div class="verified-badge">✓</div>
+        </div>
+        
+        <p class="tagline">Conteúdo que você não vê em lugar nenhum</p>
+        <h1>Exclusivos Premium 🔥</h1>
+
+        <div class="members-active">
+            👥 <span>+14.739 membros ativos</span>
+        </div>
+
+        <div class="features-list">
+            <p>⚡ Acesso imediato ao conteúdo exclusivo</p>
+            <p>🔒 Atualizações diárias liberadas</p>
+            <p>🛡️ 100% seguro e privado</p>
+        </div>
+
+        <!-- BOTÃO COM REDIRECIONAMENTO E ESCASSEZ AUTOMÁTICA -->
+        <a href="https://apextry.com/go/frentistaatamiresss" class="button">
+            🔓 Liberar Acesso
+            <span class="vagas-sub" id="vagas-text">(3 vagas restantes)</span>
+        </a>
+
+        <div class="micro-proof">
+            <span>✓ Acesso imediato</span>
+            <span>✓ 100% seguro</span>
+            <span>✓ Sem cadastro</span>
+        </div>
     </div>
 
-    <!-- LINK DO BOT COM TEXTO EM PRIMEIRA PESSOA -->
-    <a href="https://apextry.com/go/frentistaatamiresss" class="button">
-        QUERO ENTRAR NO CANAL VIP AGORA!
-    </a>
+    <!-- CARDS DE COMENTÁRIOS / PROVA SOCIAL (Fiel ao modelo) -->
+    <div class="social-proof-grid">
+        <div class="proof-card">
+            <div class="proof-header">
+                <img class="proof-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                <span class="proof-name">Lucas M.</span>
+            </div>
+            <p class="proof-comment">É cada vídeo que o cara fica doido 🔥</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+        
+        <div class="proof-card">
+            <div class="proof-header">
+                <img class="proof-avatar" src="https://randomuser.me/api/portraits/men/46.jpg" alt="User">
+                <span class="proof-name">Pedro R.</span>
+            </div>
+            <p class="proof-comment">Um vídeo melhor que o outro</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
 
-    <div class="footer">
-        Você será redirecionado para o Telegram em 2 segundos.
+        <div class="proof-card">
+            <div class="proof-header">
+                <img class="proof-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                <span class="proof-name">Rafa S.</span>
+            </div>
+            <p class="proof-comment">Melhor Grupo! 😈</p>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
     </div>
-</div>
 
-<!-- Repassar UTMs da URL para o botão -->
-<script>
-  var params = window.location.search;
-  if (params) {
-    var btn = document.querySelector('a.button');
-    if (btn) btn.href += (btn.href.includes('?') ? '&' : '?') + params.substring(1);
-  }
-</script>
+    <!-- SCRIPT DE COMPORTAMENTO DINÂMICO (Pessoas online e vagas caindo) -->
+    <script>
+        // Mantém suas UTMs
+        var params = window.location.search;
+        if (params) {
+            var btn = document.querySelector('a.button');
+            if (btn) btn.href += (btn.href.includes('?') ? '&' : '?') + params.substring(1);
+        }
+
+        // Script 1: Oscilação de pessoas online
+        const userSpan = document.getElementById('live-users');
+        setInterval(() => {
+            let current = parseInt(userSpan.innerText);
+            let change = Math.floor(Math.random() * 7) - 3; // varia entre -3 e +3
+            let next = current + change;
+            if (next < 35) next = 42;
+            if (next > 75) next = 61;
+            userSpan.innerText = next;
+        }, 2500);
+
+        // Script 2: Escassez das vagas mudando após 4 segundos
+        setTimeout(() => {
+            document.getElementById('vagas-text').innerText = "(1 vaga restante)";
+        }, 4000);
+    </script>
 </body>
 </html>
