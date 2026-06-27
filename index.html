@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Acesso Privado 📸</title>
-    <!-- Seus scripts de tracking mantidos -->
     <script src="https://cdn.jsdelivr.net/gh/xTracky/static@latest/utm-handler.js" data-token="5c96fa39-019f-4f60-b07c-b9866e689540" src="https://apextry.com/cdn/query-filter.js"></script>
     <script id="_wau2ec">var _wau = _wau || []; _wau.push(["classic", "yy0juu7t6h", "2ec"]);</script>
     <script async src="//waust.at/c.js"></script>
@@ -17,7 +16,7 @@
             -webkit-tap-highlight-color: transparent;
         }
         body {
-            background: #09090b;
+            background: #111112;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             color: #ffffff;
             display: flex;
@@ -25,194 +24,191 @@
             justify-content: flex-start;
             align-items: center;
             min-height: 100vh;
-            padding: 20px 16px;
+            padding: 25px 0;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Imagem de fundo otimizada para carregamento e proporção mobile vertical */
+        /* Silhueta de fundo gerada nativamente para estabilidade mobile */
         body::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url('https://api.screenshot.me/v1/download/a2a9446275207a803e576c089457040b.jpg'); 
-            background-size: cover;
-            background-position: center center;
-            filter: blur(18px) brightness(0.22) grayscale(0.1);
+            background: 
+                radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(17,17,18,0.2) 0%, #111112 85%),
+                radial-gradient(ellipse at top, #2c2c35 0%, #111112 70%);
             z-index: -1;
-            transform: scale(1.15);
         }
 
-        /* Contador superior mobile */
+        /* Contador superior discreto */
         .online-counter {
-            font-size: 13px;
-            color: #a1a1aa;
+            font-size: 12px;
+            color: #7c7c82;
             display: flex;
             align-items: center;
             gap: 6px;
-            margin-bottom: 15px;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
         }
         .pulse-dot {
-            width: 7px;
-            height: 7px;
-            background: #22c55e;
+            width: 6px;
+            height: 6px;
+            background: #34c759;
             border-radius: 50%;
-            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            box-shadow: 0 0 8px #34c759;
             animation: pulse 1.6s infinite;
         }
         @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
-            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.6); }
+            70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(52, 199, 89, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); }
         }
 
         .wrapper {
             width: 100%;
-            max-width: 400px;
+            padding: 0 20px;
             text-align: center;
         }
 
-        /* Ajuste de tamanho do presente para não empurrar o botão para fora da tela no celular */
+        /* Caixa do presente com borda vermelha e brilho neon realçado */
         .badge-icon-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
         .badge-icon {
-            width: 92px;
-            height: 92px;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            width: 115px;
+            height: 115px;
+            background: radial-gradient(circle, #ff3b30 20%, #dd2c22 100%);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 30px rgba(239, 68, 68, 0.7), inset 0 2px 4px rgba(255,255,255,0.2);
+            border: 3px solid #ff453a;
+            box-shadow: 0 0 35px rgba(255, 59, 48, 0.65), inset 0 0 15px rgba(255,255,255,0.2);
         }
         .badge-icon svg {
-            width: 44px;
-            height: 44px;
+            width: 50px;
+            height: 50px;
             fill: #fff;
-            filter: drop-shadow(0 2px 6px rgba(255,255,255,0.25));
         }
+        /* Selo azul de verificado */
         .verified-badge {
             position: absolute;
-            bottom: 0px;
-            right: 0px;
-            background: #3b82f6;
-            border: 2px solid #09090b;
+            bottom: 4px;
+            right: 4px;
+            background: #007aff;
+            border: 2px solid #111112;
             border-radius: 50%;
-            width: 26px;
-            height: 26px;
+            width: 25px;
+            height: 25px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
-        .verified-badge svg {
-            width: 14px;
-            height: 14px;
-            fill: #fff;
+        .verified-badge::after {
+            content: '✓';
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
         }
 
         .tagline {
-            color: #ef4444;
+            color: #ff3b30;
             font-size: 11px;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
         }
         h1 {
-            font-size: 25px;
-            margin-bottom: 12px;
+            font-size: 27px;
+            margin-bottom: 15px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -0.5px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
         }
 
-        /* Pílula de membros ativos compactada para mobile */
+        /* Pílula de membros com avatares empilhados */
         .members-active {
             display: inline-flex;
             align-items: center;
-            background: rgba(24, 24, 27, 0.8);
-            padding: 5px 14px;
+            background: rgba(28, 28, 30, 0.7);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 12px;
-            color: #e4e4e7;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(4px);
+            font-size: 12.5px;
+            color: #d1d1d6;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .avatar-group {
             display: flex;
             align-items: center;
-            margin-right: 6px;
+            margin-right: 8px;
         }
         .avatar-group img {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 1.5px solid #18181b;
+            border: 1.5px solid #1c1c1e;
             object-fit: cover;
         }
         .avatar-group img:not(:first-child) {
-            margin-left: -5px;
+            margin-left: -6px;
         }
 
-        /* Lista de recursos com espaçamento otimizado */
+        /* Lista de recursos com ícones outline finos e iluminados */
         .features-list {
             text-align: left;
             width: 100%;
-            max-width: 290px;
-            margin: 0 auto 22px auto;
+            max-width: 300px;
+            margin: 0 auto 25px auto;
         }
         .features-list .item {
-            font-size: 13.5px;
-            margin-bottom: 10px;
-            color: #e4e4e7;
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #e5e5ea;
             display: flex;
             align-items: center;
-            gap: 10px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            gap: 12px;
         }
         .features-list svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
         }
-        .icon-yellow { fill: #eab308; filter: drop-shadow(0 0 4px rgba(234, 179, 8, 0.7)); }
-        .icon-green { fill: #22c55e; filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.7)); }
-        .icon-blue { fill: #3b82f6; filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.7)); }
+        /* Linhas finas acesas */
+        .icon-yellow { fill: none; stroke: #ffd60a; stroke-width: 2; filter: drop-shadow(0 0 3px #ffd60a); }
+        .icon-green { fill: none; stroke: #30d158; stroke-width: 2; filter: drop-shadow(0 0 3px #30d158); }
+        .icon-blue { fill: none; stroke: #0a84ff; stroke-width: 2; filter: drop-shadow(0 0 3px #0a84ff); }
 
-        /* Botão Verde Mobile Premium */
+        /* Botão verde */
         .button {
             display: block;
             width: 100%;
-            padding: 15px 16px;
-            background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
-            border-radius: 14px;
+            padding: 16px 16px;
+            background: linear-gradient(180deg, #34c759 0%, #28a745 100%);
+            border-radius: 16px;
             text-decoration: none;
             color: #fff;
             font-weight: bold;
             font-size: 18px;
-            box-shadow: 0 6px 20px rgba(22, 163, 74, 0.45);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
             text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .button svg {
             width: 15px;
             height: 15px;
             fill: #fff;
             vertical-align: middle;
-            margin-right: 4px;
+            margin-right: 6px;
             margin-top: -3px;
         }
         .button span.vagas-sub {
             display: block;
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: normal;
             opacity: 0.9;
             margin-top: 2px;
@@ -221,36 +217,40 @@
 
         .micro-proof {
             font-size: 11px;
-            color: #71717a;
-            margin-top: 12px;
+            color: #636366;
+            margin-top: 14px;
             display: flex;
             justify-content: center;
             gap: 10px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
         }
 
-        /* Grid de depoimentos empilhado para celular */
+        /* Exibição horizontal lado a lado idêntica no mobile */
         .social-proof-grid {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
-            max-width: 400px;
-            margin-top: 25px;
+            overflow-x: auto;
+            padding: 25px 20px 10px 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .social-proof-grid::-webkit-scrollbar {
+            display: none;
         }
         .proof-card {
-            background: rgba(24, 24, 27, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 10px 12px;
-            border-radius: 12px;
+            min-width: 240px;
+            flex: 1;
+            background: rgba(28, 28, 30, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 14px;
             text-align: left;
-            backdrop-filter: blur(4px);
         }
         .proof-header {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
         .proof-avatar {
             width: 24px;
@@ -259,70 +259,88 @@
             object-fit: cover;
         }
         .proof-name {
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: bold;
             color: #fff;
         }
         .proof-comment {
             font-size: 11px;
-            color: #d4d4d8;
-            line-height: 1.3;
-            margin-bottom: 4px;
+            color: #aeaea3;
+            line-height: 1.4;
+            margin-bottom: 5px;
         }
         .stars {
-            color: #fbbf24;
+            color: #ffd60a;
             font-size: 9px;
+        }
+
+        /* Rodapé de Termos e Privacidade Idêntico à Referência */
+        .footer-copyright {
+            margin-top: 20px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            text-align: center;
+            line-height: 1.8;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 4px;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: underline;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- CONTADOR SUPERIOR -->
     <div class="online-counter">
         <div class="pulse-dot"></div>
-        <span id="live-users">76</span> pessoas vendo agora
+        <span id="live-users">47</span> pessoas vendo agora
     </div>
 
     <div class="wrapper">
-        <!-- ICONE PRESENTE BRILHANTE -->
         <div class="badge-icon-container">
             <div class="badge-icon">
                 <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.65-.5-.65C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h16v6z"/></svg>
             </div>
-            <div class="verified-badge">
-                <svg viewBox="0 0 24 24"><path d="M23 12l-2.44-2.79.34-3.69-3.61-.82-1.89-3.2L12 2.96 8.6 1.5 6.71 4.7l-3.61.81.34 3.68L1 12l2.44 2.79-.34 3.69 3.61.82 1.89 3.2L12 21.04l3.4 1.46 1.89-3.2 3.61-.81-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
+            <div class="verified-badge"></div>
         </div>
         
         <p class="tagline">Conteúdo que você não vê em lugar nenhum</p>
-        <h1>Exclusivos Premium 🔥</h1>
+        <h1>Exclusivos Premium ⚡</h1>
 
         <div class="members-active">
             <div class="avatar-group">
-                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="user">
-                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="user">
-                <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="user">
+                <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="user">
+                <img src="https://randomuser.me/api/portraits/men/29.jpg" alt="user">
+                <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="user">
             </div>
             <span>+12.847 membros ativos</span>
         </div>
 
-        <!-- LISTA COESA COM ELEMENTOS ACESOS -->
         <div class="features-list">
             <div class="item">
-                <svg class="icon-yellow" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                <svg class="icon-yellow" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 <span>Acesso imediato ao conteúdo exclusivo</span>
             </div>
             <div class="item">
-                <svg class="icon-green" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                <svg class="icon-green" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 <span>Atualizações diárias liberadas</span>
             </div>
             <div class="item">
-                <svg class="icon-blue" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <svg class="icon-blue" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 <span>100% seguro e privado</span>
             </div>
         </div>
 
-        <!-- BOTÃO ACESSÍVEL -->
         <a href="https://apextry.com/go/frentistaatamiresss" class="button">
             <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
             Liberar Acesso
@@ -336,7 +354,6 @@
         </div>
     </div>
 
-    <!-- COMENTÁRIOS ADAPTADOS VERTICALMENTE -->
     <div class="social-proof-grid">
         <div class="proof-card">
             <div class="proof-header">
@@ -366,29 +383,34 @@
         </div>
     </div>
 
+    <div class="footer-copyright">
+        © 2026 ML777. Todos os direitos reservados.
+        <div class="footer-links">
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos</a>
+        </div>
+    </div>
+
     <script>
-        // Manutenção de parâmetros UTM
         var params = window.location.search;
         if (params) {
             var btn = document.querySelector('a.button');
             if (btn) btn.href += (btn.href.includes('?') ? '&' : '?') + params.substring(1);
         }
 
-        // Script: Mudança orgânica rápida de usuários online (ritmo Kwai)
         const userSpan = document.getElementById('live-users');
         setInterval(() => {
             let current = parseInt(userSpan.innerText);
             let change = Math.floor(Math.random() * 5) - 2;
             let next = current + change;
-            if (next < 60) next = 72;
-            if (next > 95) next = 81;
+            if (next < 40) next = 47;
+            if (next > 65) next = 52;
             userSpan.innerText = next;
-        }, 2500);
+        }, 3000);
 
-        // Script: Escassez acelerada para mobile (3s)
         setTimeout(() => {
             document.getElementById('vagas-text').innerText = "(1 vaga restante)";
-        }, 3500);
+        }, 4000);
     </script>
 </body>
 </html>
